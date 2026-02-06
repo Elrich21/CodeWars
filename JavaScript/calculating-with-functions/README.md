@@ -3,6 +3,7 @@
 This project solves the classic Codewars JavaScript challenge where numbers and operations are represented as functions, allowing expressions like:
 
 seven(times(five()))  // 35
+
 four(plus(nine()))    // 13
 
 
@@ -44,28 +45,51 @@ Which evaluates as:
 7 × 5 = 35
 
 ⚙️ Implementation
+
 🔢 Number Functions
+
+~~~
 function zero(fn)  { return fn ? fn(0) : 0 }
+
 function one(fn)   { return fn ? fn(1) : 1 }
+
 function two(fn)   { return fn ? fn(2) : 2 }
+
 function three(fn) { return fn ? fn(3) : 3 }
+
 function four(fn)  { return fn ? fn(4) : 4 }
+
 function five(fn)  { return fn ? fn(5) : 5 }
+
 function six(fn)   { return fn ? fn(6) : 6 }
+
 function seven(fn) { return fn ? fn(7) : 7 }
+
 function eight(fn) { return fn ? fn(8) : 8 }
+
 function nine(fn)  { return fn ? fn(9) : 9 }
 
+~~~
+
+
 ➕➖✖️➗ Operation Functions
+~~~
 function plus(y) {
+
   return function(x) {
+  
     return x + y;
+    
   }
+  
 }
 
 function minus(y) {
+
   return function(x) {
+  
     return x - y;
+    
   }
 }
 
@@ -73,18 +97,27 @@ function times(y) {
   return function(x) {
     return x * y;
   }
+  
 }
 
 function dividedBy(y) {
+
   return function(x) {
+  
     return Math.floor(x / y);
+    
   }
+  
 }
+~~~
 
 🧪 Examples
 seven(times(five()))      // 35
+
 four(plus(nine()))        // 13
+
 eight(minus(three()))     // 5
+
 six(dividedBy(two()))     // 3
 
 🧩 Concepts Used
